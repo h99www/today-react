@@ -1,4 +1,4 @@
-#base image로 nginx 사용, 태그 생략 시 자동 latest
+#base image로 nginx 사용, 태그 생략 시 자동 latest 
 FROM nginx
 
 #root 경로에 app 폴더 생성
