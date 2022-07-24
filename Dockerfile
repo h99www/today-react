@@ -13,7 +13,7 @@ RUN mkdir ./build
 #앞에는 host pc 뒤에는 docker 경로  
 #현재 Dockerfile이 위치한 같은 경로에  > Docker 컨테이너의 work dir 경로에 복사하라는 명령어
 #윈도우 dockerfile이 있는 위치의 build파일을 컨테이너 만들어서 app 밑에 build에 복사하라는 명령어
-CMD ["npm", "run", "build"]
+# CMD ["npm", "run", "build"]
 
 #host pc의 현재 경로의 build 폴더를 work dir의 build 폴더로 복사
 ADD ./build ./build
