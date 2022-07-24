@@ -19,7 +19,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.15.0]
+        node-version: [8.x, 10.x, 12.x]
 
     steps:
       # github repository에서 checkout
@@ -32,7 +32,7 @@ jobs:
       # - run: npm install
       # - run: npm run build
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
