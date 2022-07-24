@@ -16,16 +16,29 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.15.0]
+
     steps:
       # github repository에서 checkout
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - name: npm build
+      # - name: npm build
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: ${{ matrix.node-version }}
+      # - run: npm install
+      # - run: npm run build
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install
-      - run: npm run build
+      - run: npm ci
+      - run: npm run build --if-present
+
+      
       # docker build 수행
       - name: Set up docker buildx
         id: buildx
