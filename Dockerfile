@@ -30,7 +30,7 @@ EXPOSE 80
 # nginx -g deamon off; 명령어를 실행
 # container 실행 시 자동으로 실행할 커맨드 (nginx 서버 데몬으로 시작하기 위한 명령)
 CMD ["nginx", "-g", "daemon off;"]
-
+ 
 
 
 
